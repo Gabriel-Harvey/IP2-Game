@@ -15,6 +15,11 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     public void Start()
     {

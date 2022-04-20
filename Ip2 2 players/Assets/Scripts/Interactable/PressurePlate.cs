@@ -8,28 +8,16 @@ public class PressurePlate : MonoBehaviour
     public bool ispressed;
     public Animator animator;
     public GameObject LinkedDoor;
+    public float time = 0;
 
-    public void Update()
-    {
-        if (ispressed == true)
-        {
-            animator.SetBool("pressed", true);
-            LinkedDoor.SetActive(false);
-        }
-        else
-        {
-            animator.SetBool("pressed", false);
-            LinkedDoor.SetActive(true);
-        }
-
-
-    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             collision.transform.SetParent(transform);
-            ispressed = true;
+            //ispressed = true;
+            animator.SetBool("pressed", true);
+            LinkedDoor.SetActive(false);
         }
     }
 
@@ -38,8 +26,16 @@ public class PressurePlate : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.transform.SetParent(transform);
-            ispressed = false;
+            //ispressed = false;
+            animator.SetBool("pressed", false);
+            StartCoroutine(WaitTime());
         }
+    }
+
+    IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(time);
+        LinkedDoor.SetActive(true);
     }
 
 

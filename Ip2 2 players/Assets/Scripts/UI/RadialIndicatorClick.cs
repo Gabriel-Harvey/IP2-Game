@@ -17,11 +17,16 @@ public class RadialIndicatorClick : MonoBehaviour
     [SerializeField] private UnityEvent myEvent = null;
 
     private bool shouldUpdate = false;
+    public bool pressed;
+    public Movement player;
+
+    
 
     private void Update()
     { 
-        if (Input.GetKey(selectKey))
+        if (pressed == true)
         {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
             shouldUpdate = false;
             indicatorTimer -= Time.deltaTime;
             radialIndicatorUI.enabled = true;
@@ -29,6 +34,8 @@ public class RadialIndicatorClick : MonoBehaviour
 
             if (indicatorTimer <= 0)
             {
+                //Debug.Log("Reset");
+                player.ResetPosition();
                 indicatorTimer = maxIndicatorTimer;
                 radialIndicatorUI.fillAmount = maxIndicatorTimer;
                 radialIndicatorUI.enabled = false;
@@ -50,9 +57,11 @@ public class RadialIndicatorClick : MonoBehaviour
                     shouldUpdate = false;
                 }
             }
+
+            
         }
 
-        if(Input.GetKeyUp(selectKey))
+        if(pressed == true)
         {
             shouldUpdate = true;
         }

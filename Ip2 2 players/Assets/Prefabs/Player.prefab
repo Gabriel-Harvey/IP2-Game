@@ -105,6 +105,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4ae871ae-edae-4a5e-af2f-508c045c80d4
     m_ActionName: Gameplay/Interact[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5158321129111862457}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: ResetRadial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bcc53f6b-fd5f-419e-b779-4eaa09412f0a
+    m_ActionName: Gameplay/Reset[/XInputControllerWindows/buttonNorth,/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

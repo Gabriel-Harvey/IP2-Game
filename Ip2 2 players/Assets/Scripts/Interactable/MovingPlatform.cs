@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     public float speed;
+    public float time;
     public int startingPoint;
     public Transform[] points;
 
@@ -39,4 +40,6 @@ public class MovingPlatform : MonoBehaviour
     {
         collision.transform.SetParent(null);
     }
+
+    
 }

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     Movement player;
+    RadialIndicatorClick radial;
     CharacterSwitcher switcher;
     MultipleTargetCamera multipleTarget;
     public List<GameObject> players = new List<GameObject>();
@@ -21,6 +22,7 @@ public class PlayerInputHandler : MonoBehaviour
         indexValue = switcher.index;
 
         player = GameObject.Instantiate(players[switcher.index], spawn.transform.position, spawn.transform.rotation).GetComponent<Movement>();
+        radial = GameObject.Find("RadialIndicatorUI").GetComponent<RadialIndicatorClick>();
         GameObject.DontDestroyOnLoad(this.gameObject);
 
 
@@ -76,6 +78,21 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.canceled)
             {
                 player.interactCancel();
+            }
+        }
+    }
+    public void ResetRadial(InputAction.CallbackContext context)
+    {
+        if (player)
+        {
+            if (context.started)
+            {
+                radial.pressed = true;
+            }
+
+            if (context.canceled)
+            {
+                radial.pressed = false;
             }
         }
     }

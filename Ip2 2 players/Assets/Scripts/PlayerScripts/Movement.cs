@@ -108,4 +108,10 @@ public class Movement : MonoBehaviour
     {
         collisionMangement.isPressed = false;
     }
+
+    public void ResetPosition()
+    {
+        GameObject.Find("Evangelos(Clone)").transform.position = PlayerInputHandler.spawn.transform.position;
+        GameObject.Find("Angelica(Clone)").transform.position = PlayerInputHandler.spawn.transform.position;
+    }
 }
