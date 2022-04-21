@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lever: {fileID: 0}
   colliding: 0
+  exitColliding: 0
   isPressed: 0
   inputHandler: {fileID: 0}
   movement: {fileID: 452587389703841701}
@@ -305,7 +306,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0058916807, y: 0.61467654}
+  m_Offset: {x: 0.010264605, y: 0.87911725}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -316,7 +317,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59368384, y: 0.7817339}
+  m_Size: {x: 0.5674451, y: 0.27980638}
   m_EdgeRadius: 0
 --- !u!251 &2721383866942933860
 PlatformEffector2D:

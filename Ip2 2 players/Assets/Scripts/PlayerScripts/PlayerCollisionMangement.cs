@@ -9,6 +9,7 @@ public class PlayerCollisionMangement : MonoBehaviour
     [SerializeField]
     Lever lever;
     public bool colliding;
+    public bool exitColliding;
     public bool isPressed;
     public PlayerInputHandler inputHandler;
     public Movement movement;
@@ -19,10 +20,16 @@ public class PlayerCollisionMangement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip button;
 
+    [Header("Portal")]
+    SoulsManager souls;
+    bool canLeave;
+
 
     private void Start()
     {
         heartSystem = GameObject.FindGameObjectWithTag("InputManager").GetComponent<HeartSystem>();
+        souls = GameObject.Find("SoulsManager").GetComponent<SoulsManager>();
+
     }
 
     private void FixedUpdate()
@@ -31,6 +38,14 @@ public class PlayerCollisionMangement : MonoBehaviour
         {
             lever.pulled = true;
         }
+
+        if (exitColliding == true && canLeave == true && isPressed == true)
+        {
+            SceneManager.LoadScene("MenuScreen");
+        }
+
+        
+    
     }
 
     
@@ -40,13 +55,17 @@ public class PlayerCollisionMangement : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case ("Death"):
-                Debug.Log("Death");
-                heartSystem.TakeDamage(1);
                 Death = true;
+                heartSystem.TakeDamage(1);          
                 break;
 
             case ("Button"):
                 audioSource.PlayOneShot(button);
+                break;
+
+            case ("Soul"):
+                GameObject.Destroy(collision.gameObject);
+                souls.increaseSouls();
                 break;
 
         }
@@ -62,13 +81,14 @@ public class PlayerCollisionMangement : MonoBehaviour
 
         if (collision.gameObject.tag == "Exit")
         {
-            SceneManager.LoadScene("MenuScreen");
-            //inputHandler.NewSpawn();
-            //movement.NewScene();
+            //SceneManager.LoadScene("MenuScreen");
+            if (souls.souls == souls.soulMax)
+            {
+                canLeave = true;
+            }
+            exitColliding = true;
             
         }
-
-        
 
     }
 
@@ -78,6 +98,12 @@ public class PlayerCollisionMangement : MonoBehaviour
         {
             lever = null;
             colliding = false;
+        }
+
+        if (collision.gameObject.tag == "Exit")
+        {
+            exitColliding = true;
+
         }
     }
 

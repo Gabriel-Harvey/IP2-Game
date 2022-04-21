@@ -13,6 +13,7 @@ TagManager:
   - Button
   - Exit
   - PlayerInput
+  - Soul
   layers:
   - Default
   - TransparentFX

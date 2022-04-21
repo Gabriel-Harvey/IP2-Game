@@ -34,7 +34,6 @@ public class HeartSystem : MonoBehaviour
         if (life >= 1)
         {
             life -= d;
-            Debug.Log(life);
             Destroy(hearts[life].gameObject);
             //Death = true;
             if (life < 1)

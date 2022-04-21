@@ -79,6 +79,8 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 player.interactCancel();
             }
+            Time.timeScale = 1;
+            TextTrigger.xPessed = true;
         }
     }
     public void ResetRadial(InputAction.CallbackContext context)
@@ -101,5 +103,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         spawn = GameObject.FindGameObjectWithTag("SpawnPoint");
         Debug.Log("new spawn");
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+        Debug.Log("Pressed");
     }
 }
