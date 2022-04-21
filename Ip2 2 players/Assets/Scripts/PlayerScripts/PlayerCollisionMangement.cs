@@ -28,11 +28,15 @@ public class PlayerCollisionMangement : MonoBehaviour
     SoulsManager souls;
     bool canLeave;
 
+    [Header("Naritive Triggers")]
+    public TextTrigger textTrigger;
+    bool textCollision;
 
     private void Start()
     {
         heartSystem = GameObject.FindGameObjectWithTag("InputManager").GetComponent<HeartSystem>();
         souls = GameObject.Find("SoulsManager").GetComponent<SoulsManager>();
+        inputHandler = GameObject.FindGameObjectWithTag("PlayerInput").GetComponent<PlayerInputHandler>();
 
     }
 
@@ -77,7 +81,25 @@ public class PlayerCollisionMangement : MonoBehaviour
                 souls.increaseSouls();
                 break;
 
+            case ("TextTrigger"):
+   
+                textTrigger = collision.gameObject.GetComponent<TextTrigger>();
+                Debug.Log("hit");
+                break;
+
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case ("TextTrigger"):
+                textTrigger = null;
+                break;
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -126,6 +148,12 @@ public class PlayerCollisionMangement : MonoBehaviour
             platfromLever = null;
             leverColliding = false;
         }
+    }
+
+    public void TextCall()
+    {
+        inputHandler.trigger = textTrigger;
+        inputHandler.paused = true;
     }
 
    
