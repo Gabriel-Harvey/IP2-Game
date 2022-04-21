@@ -125,7 +125,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 390fc7ede83bd624dae6256d1cecdb0e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   isPressed: 0
   inputHandler: {fileID: 0}
   movement: {fileID: 452587389703841701}
+  leverColliding: 0
   audioSource: {fileID: -8868157333179294839}
   button: {fileID: 8300000, guid: fac734a162625a442a836033dd6bf1ea, type: 3}
 --- !u!114 &-2532033641192956674
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 452587389703841701}
-  breakSpeed: {x: 0, y: -5}
+  breakSpeed: {x: 0, y: -7}
   audioSource: {fileID: -8868157333179294839}
   blockBreak: {fileID: 8300000, guid: c7a8e0c631b8b9b438f1c2d8a1acecc2, type: 3}
   thisCollider: {fileID: 5107104255863144632}

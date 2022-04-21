@@ -126,7 +126,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 390fc7ede83bd624dae6256d1cecdb0e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   isPressed: 0
   inputHandler: {fileID: 0}
   movement: {fileID: 7279370595225881905}
+  leverColliding: 0
   audioSource: {fileID: 8020492325473789930}
   button: {fileID: 8300000, guid: fac734a162625a442a836033dd6bf1ea, type: 3}
 --- !u!82 &8020492325473789930

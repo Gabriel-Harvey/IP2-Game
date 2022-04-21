@@ -16,6 +16,10 @@ public class PlayerCollisionMangement : MonoBehaviour
     HeartSystem heartSystem;
     public static bool Death;
 
+    [Header("Platfrom Lever")]
+    public bool leverColliding;
+    PlatfromLever platfromLever;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip button;
@@ -42,6 +46,11 @@ public class PlayerCollisionMangement : MonoBehaviour
         if (exitColliding == true && canLeave == true && isPressed == true)
         {
             SceneManager.LoadScene("MenuScreen");
+        }
+
+        if(leverColliding == true && isPressed == true)
+        {
+            platfromLever.pulled = true;
         }
 
         
@@ -79,6 +88,12 @@ public class PlayerCollisionMangement : MonoBehaviour
             colliding = true;
         }
 
+        if (collision.gameObject.tag == "PlatformLever")
+        {
+            platfromLever = collision.gameObject.GetComponent<PlatfromLever>();
+            leverColliding = true;
+        }
+
         if (collision.gameObject.tag == "Exit")
         {
             //SceneManager.LoadScene("MenuScreen");
@@ -104,6 +119,12 @@ public class PlayerCollisionMangement : MonoBehaviour
         {
             exitColliding = true;
 
+        }
+
+        if (collision.gameObject.tag == "PlatformLever")
+        {
+            platfromLever = null;
+            leverColliding = false;
         }
     }
 

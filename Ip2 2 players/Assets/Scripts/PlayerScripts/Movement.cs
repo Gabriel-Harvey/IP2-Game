@@ -57,8 +57,8 @@ public class Movement : MonoBehaviour
             PlayerCollisionMangement.Death = false;
         }
 
-        
 
+        Debug.Log(_rigidbody.velocity.y);
     }
 
     public void Update()

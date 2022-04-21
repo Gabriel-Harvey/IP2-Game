@@ -14,26 +14,21 @@ public class EveSpecial : MonoBehaviour
     public Collider2D otherCollider;
 
 
-    void Stara()
-    {
-        //otherCollider = GameObject.Find("Angelica(Clone").GetComponent<CapsuleCollider2D>();
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Breakable" & movement._rigidbody.velocity.y < breakSpeed.y)
+        if (collision.gameObject.tag == "Breakable" && movement._rigidbody.velocity.y <= breakSpeed.y)
         {
-            //collision.gameObject.GetComponent<AudioSource>().Play();
             audioSource.PlayOneShot(blockBreak);
             GameObject.Destroy(collision.gameObject);   
             Debug.Log("Break");
         }
     }
 
+
+
     public void Update()
     {
-        Physics2D.IgnoreCollision(thisCollider, otherCollider);
+        //Physics2D.IgnoreCollision(thisCollider, otherCollider);
 
     }
     public void Awake()
