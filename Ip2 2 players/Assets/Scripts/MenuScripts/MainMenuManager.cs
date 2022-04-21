@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void SetiingsSelect()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Settings");
     }
 
     public void Exit()

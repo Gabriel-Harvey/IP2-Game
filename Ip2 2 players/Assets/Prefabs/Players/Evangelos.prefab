@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -8868157333179294839}
   - component: {fileID: 8342993468334558036}
   - component: {fileID: 2721383866942933860}
+  - component: {fileID: 7822931247608636013}
   m_Layer: 6
   m_Name: Evangelos
   m_TagString: Player
@@ -144,6 +145,7 @@ MonoBehaviour:
   movementSpeed: 5
   jumpForce: 10
   horizontal: 0
+  animator: {fileID: 7822931247608636013}
   _rigidbody: {fileID: 5885721498018365330}
   collisionMangement: {fileID: 2372498631181242592}
   heart: {fileID: 0}
@@ -338,3 +340,22 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!95 &7822931247608636013
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428861936842447673}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bea7397f8df94d7448064a71c37cd0ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

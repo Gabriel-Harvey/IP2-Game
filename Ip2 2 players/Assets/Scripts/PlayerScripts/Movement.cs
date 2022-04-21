@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public float horizontal;
     private bool isFacingRight = true;
-
+    public Animator animator;
 
 
     [Header("Other")]
@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.velocity = new Vector2(horizontal * movementSpeed, _rigidbody.velocity.y);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         if (!isFacingRight && horizontal > 0f)
         {

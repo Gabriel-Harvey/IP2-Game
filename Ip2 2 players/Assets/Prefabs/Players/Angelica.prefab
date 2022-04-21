@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6337606590067967198}
   - component: {fileID: 8178944264609807719}
   - component: {fileID: 6702936692740936258}
+  - component: {fileID: 3786952031247329318}
   m_Layer: 6
   m_Name: Angelica
   m_TagString: Player
@@ -145,6 +146,7 @@ MonoBehaviour:
   movementSpeed: 5
   jumpForce: 12
   horizontal: 0
+  animator: {fileID: 3786952031247329318}
   _rigidbody: {fileID: 3669349219572978950}
   collisionMangement: {fileID: -4606681791493848507}
   heart: {fileID: 0}
@@ -174,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lever: {fileID: 0}
   colliding: 0
+  exitColliding: 0
   isPressed: 0
   inputHandler: {fileID: 0}
   movement: {fileID: 7279370595225881905}
@@ -334,6 +337,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisCollider: {fileID: 2711863427379849772}
   otherCollider: {fileID: 0}
+--- !u!95 &3786952031247329318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888315905155051949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7337577d25124f84c9eae0ef3a39b62d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8064749360402262278
 GameObject:
   m_ObjectHideFlags: 0
