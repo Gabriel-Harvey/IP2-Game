@@ -14,8 +14,6 @@ TagManager:
   - Exit
   - PlayerInput
   - Soul
-  - PlatformLever
-  - TextTrigger
   layers:
   - Default
   - TransparentFX

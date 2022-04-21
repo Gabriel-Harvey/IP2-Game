@@ -13,9 +13,6 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject spawn;
     public int indexValue;
 
-    public TextTrigger trigger;
-    public bool paused;
-
     void Start()
     {
         
@@ -59,7 +56,6 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.performed && Mathf.Abs(player._rigidbody.velocity.y) < 0.01f)
             {
                 player.LargeJump();
-                
             }
 
             if (context.canceled && Mathf.Abs(player._rigidbody.velocity.y) > 0f)
@@ -76,15 +72,7 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.started)
             {
                 player.interact();
-                //player.CollisionCall();
                 //Debug.Log("Pressed");
-                if (paused == true)
-                {
-
-                    trigger.DestroyText();
-                    paused = false;
-                    Debug.Log("destroy");
-                }
             }
 
             if (context.canceled)
@@ -92,9 +80,7 @@ public class PlayerInputHandler : MonoBehaviour
                 player.interactCancel();
             }
             Time.timeScale = 1;
-            //TextTrigger.xPessed = true;
-            
-            
+            TextTrigger.xPessed = true;
         }
     }
     public void ResetRadial(InputAction.CallbackContext context)
@@ -123,10 +109,5 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Time.timeScale = 1;
         Debug.Log("Pressed");
-    }
-
-    public void triggerCall()
-    {
-
     }
 }

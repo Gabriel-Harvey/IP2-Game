@@ -57,6 +57,8 @@ public class Movement : MonoBehaviour
             PlayerCollisionMangement.Death = false;
         }
 
+
+        Debug.Log(_rigidbody.velocity.y);
     }
 
     public void Update()
@@ -113,10 +115,5 @@ public class Movement : MonoBehaviour
     {
         GameObject.Find("Evangelos(Clone)").transform.position = PlayerInputHandler.spawn.transform.position;
         GameObject.Find("Angelica(Clone)").transform.position = PlayerInputHandler.spawn.transform.position;
-    }
-
-    public void CollisionCall()
-    {
-        collisionMangement.TextCall();
     }
 }
